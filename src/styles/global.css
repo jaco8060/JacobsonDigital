@@ -1,1 +1,27 @@
+/* src/styles/global.css */
+
+/* 1. Import Tailwind (handles default theme, preflight, utilities injection via Vite plugin) */
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #f5f5f5;
+  --color-primary: #2ecc71;
+  --color-accent: #e74c3c;
+  --color-text: #333333;
+  --color-highlight: #e8f5e9;
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark {
+  --color-primary: hsl(217, 95%, 68%);
+  --color-secondary: hsl(217, 22%, 65%);
+  --color-accent: hsl(259, 94%, 76%);
+  --color-background: hsl(217, 33%, 17%);
+}
+
+/* 4. Custom Components (using @apply with theme utilities and dark variants) */
+
+/* 5. Custom Utilities (less common with Tailwind) */
+/* @layer utilities { ... } */
